@@ -9,7 +9,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export function LoginForm() {
+interface LoginFormPageProps {}
+
+const LoginFormPage: React.FC<LoginFormPageProps> = () => {
+ 
   return (
     <div>
       <div className="flex h-screen w-full items-center justify-center  ">
@@ -62,3 +65,5 @@ export function LoginForm() {
     </div>
   );
 }
+
+export default LoginFormPage;

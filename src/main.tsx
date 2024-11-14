@@ -1,11 +1,12 @@
-import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from "./App";
-import ConfigHome from "./features/config/home";
-import { LoginForm } from "./features/main/login/login-form";
 import { ThemeProvider } from "./components/theme-provider";
+import { lazy } from "react";
+const LoginForm = lazy(() => import("./features/main/login/login-form"));
+const ConfigHome = lazy(() => import("./features/config/home"));
+const App = lazy(() => import("./App"));
+
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     // // element: <App />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <App />,
       },
       {
@@ -24,7 +25,6 @@ const router = createBrowserRouter([
   },
   {
     path: "/config",
-    
     element: <ConfigHome />,
   },
 ]);
