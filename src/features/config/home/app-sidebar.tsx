@@ -1,5 +1,5 @@
-import * as React from "react"
-import { FileSliders } from "lucide-react"
+import * as React from "react";
+import { FileSliders } from "lucide-react";
 
 import {
   Sidebar,
@@ -13,7 +13,8 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
+import { ModeToggle } from "@/components/mode-toggle";
 
 // This is sample data.
 const data = {
@@ -43,7 +44,7 @@ const data = {
       ],
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -60,6 +61,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <span className="font-semibold">Configuration</span>
                   {/* <span className="">v1.0.0</span> */}
                 </div>
+
+                <ModeToggle />
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -79,7 +82,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <SidebarMenuSub>
                     {item.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
-                        <SidebarMenuSubButton asChild isActive={item.isActive}>
+                        <SidebarMenuSubButton asChild>
                           <a href={item.url}>{item.title}</a>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
@@ -93,5 +96,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }
