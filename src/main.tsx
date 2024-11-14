@@ -6,12 +6,17 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import App from "./App";
+import ConfigHome from "./features/config/home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>
   },
+  {
+    path: "/config",
+    element: <ConfigHome />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
